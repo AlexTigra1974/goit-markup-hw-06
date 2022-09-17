@@ -27,6 +27,8 @@
 
   /* бордер*/
   --br-modal-cl: rgba(0, 0, 0, 0.1);
+  --br-form-cl: rgba(33, 33, 33, 0.2);
+
   /*анімація*/
   --animation: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -194,12 +196,15 @@ img {
 }
 
 .hero-btn {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
   padding: 10px 32px;
+
   border: 1px transparent;
   border-radius: 4px;
-  min-width: 216px;
-  text-align: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
   font-weight: 700;
   font-size: 16px;
@@ -399,7 +404,6 @@ img {
 }
 .box {
   display: flex;
-
   align-items: baseline;
 }
 .address {
@@ -441,6 +445,32 @@ img {
 .lite {
   color: var(--light-txt-cl);
   background-color: var(--socials-bg-cl);
+}
+
+.footer-form-wrap {
+  margin-left: 93px;
+  color: var(--light-txt-cl);
+}
+.footer-form {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+.footer-form-input {
+  padding-left: 16px;
+  min-width: 358px;
+  height: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: transparent;
+
+  border-radius: 4px;
+}
+.footer-form-btn {
+  padding: 10px 28px;
+  gap: 10px;
+}
+.footer-form-icon {
+  fill: var(--light-txt-cl);
 }
 /* портфоліо */
 
@@ -584,6 +614,7 @@ img {
   top: 50%;
   left: 50%;
 
+  padding: 40px;
   min-width: 528px;
   min-height: 581px;
 
@@ -613,4 +644,135 @@ img {
   border: 1px solid var(--br-modal-cl);
   border-radius: 50%;
   cursor: pointer;
+
+  transition: fill var(--animation);
+}
+.close:hover,
+.close:focus {
+  fill: var(--accent-txt-cl);
+}
+/* форма */
+
+.register-form-title {
+  display: block;
+  text-align: center;
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: calc(23 / 20);
+
+  color: var(--primary-txt-cl);
+}
+
+.register-form-group {
+  margin-bottom: 20px;
+}
+.register-form-field {
+  position: relative;
+  display: block;
+  margin-bottom: 10px;
+}
+.register-form-lable {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: calc(14 / 12);
+  letter-spacing: 0.01em;
+
+  color: var(--secondary-txt-cl);
+}
+.register-form-icon {
+  position: absolute;
+
+  left: 12px;
+  bottom: 11px;
+
+  transition: fill var(--animation);
+}
+.register-form-input {
+  padding-left: 42px;
+  width: 100%;
+  height: 40px;
+  border: 1px solid var(--br-form-cl);
+  border-radius: 4px;
+  outline: transparent;
+  transition: border-color var(--animation);
+}
+.register-form-input:focus,
+.register-form-message:focus {
+  border-color: var(--accent-cl);
+}
+.register-form-input:focus + .register-form-icon {
+  fill: var(--accent-txt-cl);
+}
+.register-form-message {
+  resize: none;
+  display: block;
+  padding: 12px 16px;
+  width: 100%;
+  height: 120px;
+
+  font-weight: 400;
+  font-size: 12px;
+  line-height: calc(14 / 12);
+  letter-spacing: 0.01em;
+  color: var(--primary-txt-cl);
+
+  border: 1px solid var(--br-form-cl);
+  border-radius: 4px;
+  outline: transparent;
+  transition: border-color var(--animation);
+}
+
+.register-form-message::placeholder {
+  font-weight: 400;
+  line-height: calc(14 / 12);
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+}
+.register-form-agreement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-bottom: 30px;
+}
+.icon-checked {
+  opacity: 0;
+  fill: var(--accent-cl);
+  transition: opacity var(--animation);
+}
+.register-form-checkbox:focus + .checkbox-icon {
+  outline: 2px solid var(--accent-cl);
+  outline-offset: 1px;
+  border-radius: 1px;
+}
+
+.register-form-checkbox:checked + .checkbox-icon .icon-checked {
+  opacity: 1;
+}
+
+.icon-unchecked {
+  opacity: 1;
+  transition: opacity var(--animation);
+}
+
+.register-form-checkbox:checked + .checkbox-icon .icon-unchecked {
+  opacity: 0;
+}
+.register-form-desc {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: calc(24 / 14);
+  letter-spacing: 0.03em;
+  color: var(--secondary-txt-cl);
+  user-select: none;
+}
+
+.register-form-link {
+  color: var(--accent-txt-cl);
+}
+.register-form-btn {
+  padding: 10px 52px;
 }
